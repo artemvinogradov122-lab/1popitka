@@ -6,6 +6,10 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     bot_token: str = Field(..., alias="BOT_TOKEN")
+    webapp_url: str = Field(
+        default="https://YOUR-RENDER-APP.onrender.com/webapp",
+        alias="WEBAPP_URL",
+    )
 
     model_config = SettingsConfigDict(
         env_file=".env",
